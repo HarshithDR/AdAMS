@@ -8,6 +8,7 @@ adc = Adafruit_ADS1x15.ADS1115()
 # Define the GPIO pin connected to the MQ-3 sensor digital output
 MQ_PIN = 18
 
+
 # Set up the GPIO pin for the MQ-3 sensor
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(MQ_PIN, GPIO.IN)
