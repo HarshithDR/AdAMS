@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Flask Mapbox Map Example</title>
+    <meta charset="UTF-8">
+    <title>Flask App Image Display</title>
   </head>
   <body>
-    <form method="POST" action="{{ url_for('map') }}">
-      <input type="text" name="address" placeholder="Enter an address">
-      <input type="submit" value="Search">
-    </form>
+    <div id="image-container">
+      <img id="image" src="static/images/image.png">
+    </div>
+    <script>
+      function refreshImage() {
+        var image = document.getElementById("image");
+        image.src = image.src.split("?")[0] + "?" + new Date().getTime();
+      }
+      setInterval(refreshImage, 5000);
+    </script>
   </body>
 </html>

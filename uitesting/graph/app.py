@@ -3,6 +3,9 @@ import time
 import random
 import matplotlib.pyplot as plt
 from io import BytesIO
+from flask import Flask, render_template, redirect, url_for
+import time
+
 
 app = Flask(__name__)
 
@@ -18,7 +21,7 @@ def generate_graph():
     plt.ylabel('Value')
     plt.title('Data vs Time')
     buffer = BytesIO()
-    plt.savefig("image.png", format='png')
+    plt.savefig("static/images/image.png", format='png')
     buffer.seek(0)
     plt.close()
     return buffer
@@ -30,7 +33,8 @@ def update(value):
     data.append(value)
     buffer = generate_graph()
     buffer.seek(0)
-    return buffer.read()
-
+    # return render_template("index.html")
+    # return buffer.read()
+    return redirect(url_for("index"))
 if __name__ == "__main__":
     app.run(debug=True)
