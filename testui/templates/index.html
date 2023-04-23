@@ -1,104 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <title>My Webpage</title>
-    <style>
-      body {
-        background-color: lightblue;
-      }
-
-      .card {
-        width: 300px;
-        height: 300px;
-        border-radius: 10px;
-        margin: 10px;
-        padding: 10px;
-        display: inline-block;
-      }
-
-      .image-card {
-        background-color: white;
-      }
-
-      .status-card {
-        background-color: lightgray;
-      }
-
-      .status-card.red {
-        background-color: red;
-      }
-
-      #map {
-        width: 100%;
-        height: 400px;
-      }
-    </style>
+    <title>Flask Mapbox Map Example</title>
   </head>
   <body>
-    <div class="card image-card">
-      <img src="" alt="image" id="image1">
-    </div>
-    <div class="card image-card">
-      <img src="" alt="image" id="image2">
-    </div>
-    <div class="card image-card">
-      <img src="" alt="image" id="image3">
-    </div>
-    <div class="card status-card" id="status1">
-      <h2>Status 1</h2>
-      <p>Value: <span id="status1-value"></span></p>
-    </div>
-    <div class="card status-card" id="status2">
-      <h2>Status 2</h2>
-      <p>Value: <span id="status2-value"></span></p>
-    </div>
-    <div class="card status-card" id="status3">
-      <h2>Status 3</h2>
-      <p>Value: <span id="status3-value"></span></p>
-    </div>
-    <div id="map"></div>
-
-    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script>
-    <script>
-      // Initialize Firebase
-      const firebaseConfig = {
-        apiKey: "YOUR_API_KEY",
-        authDomain: "YOUR_AUTH_DOMAIN",
-        databaseURL: "YOUR_DATABASE_URL",
-        projectId: "YOUR_PROJECT_ID",
-        storageBucket: "YOUR_STORAGE_BUCKET",
-        messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-        appId: "YOUR_APP_ID",
-        measurementId: "YOUR_MEASUREMENT_ID"
-      };
-      firebase.initializeApp(firebaseConfig);
-
-      // Get references to database nodes
-      const image1Ref = firebase.database().ref("image1");
-      const image2Ref = firebase.database().ref("image2");
-      const image3Ref = firebase.database().ref("image3");
-      const status1Ref = firebase.database().ref("status1");
-      const status2Ref = firebase.database().ref("status2");
-      const status3Ref = firebase.database().ref("status3");
-      const mapRef = firebase.database().ref("map");
-
-      // Attach listeners to database nodes
-      image1Ref.on("value", snapshot => {
-        const imageUrl = snapshot.val();
-        document.getElementById("image1").src = imageUrl;
-      });
-
-      image2Ref.on("value", snapshot => {
-        const imageUrl = snapshot.val();
-        document.getElementById("image2").src = imageUrl;
-      });
-
-      image3Ref.on("value", snapshot => {
-        const imageUrl = snapshot.val();
-        document.getElementById("image3").src = imageUrl;
-      });
-
-      status1Ref.on
-    </script>
+    <form method="POST" action="{{ url_for('map') }}">
+      <input type="text" name="address" placeholder="Enter an address">
+      <input type="submit" value="Search">
+    </form>
+  </body>
+</html>
