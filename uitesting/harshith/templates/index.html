@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!DOCTYPE html>
+<html>
+<head>
+    <title>My Flask App</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Function to refresh the page every 1 second
+        setInterval(function() {
+            location.reload();
+        }, 1000);
+    </script>
+</head>
+<body>
+    <h1>My Flask App</h1>
+    <div style="display: flex;">
+        <div style="flex: 1; margin-right: 20px;">
+            <h2>Graph Panel 1</h2>
+            <img src="{{ url_for('static', filename='images/Graph_Panel_1.png') }}" width="400" height="300">
+        </div>
+        <div style="flex: 1; margin-right: 20px;">
+            <h2>Graph Panel 2</h2>
+            <img src="{{ url_for('static', filename='images/Graph_Panel_2.png') }}" width="400" height="300">
+        </div>
+        <div style="flex: 1;">
+            <h2>Graph Panel 3</h2>
+            <img src="{{ url_for('static', filename='images/Graph_Panel_3.png') }}" width="400" height="300">
+        </div>
+    </div>
+    <div>
+        <h2>Map Panel</h2>
+        <img src="{{ map_panel }}" width="600" height="400">
+    </div>
+    <div>
+        <h2>Event Panel</h2>
+        <ul>
+            <li>{{ event_panel }}</li>
+        </ul>
+    </div>
+</body>
+</html></title>
+</head>
+<body>
+
+</body>
+</html>
