@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="419a5630-788b-4911-a115-928ae6c530e0" name="Changes" comment="integrated by gagan">
+    <list default="true" id="419a5630-788b-4911-a115-928ae6c530e0" name="Changes" comment="working one graph and map code">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uitesting/GAGAN/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/uitesting/GAGAN/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/uitesting/GAGAN/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/uitesting/GAGAN/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,11 +79,27 @@
       <option name="project" value="LOCAL" />
       <updated>1682358172808</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="working one graph code">
+      <created>1682358978822</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1682358978822</updated>
+    </task>
+    <task id="LOCAL-00004" summary="working one graph and map code">
+      <created>1682359034738</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1682359034738</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="integrated by gagan" />
-    <option name="LAST_COMMIT_MESSAGE" value="integrated by gagan" />
+    <MESSAGE value="working one graph code" />
+    <MESSAGE value="working one graph and map code" />
+    <option name="LAST_COMMIT_MESSAGE" value="working one graph and map code" />
   </component>
 </project>

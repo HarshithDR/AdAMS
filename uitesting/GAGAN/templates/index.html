@@ -1,13 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Map Example</title>
+    <title>Graph Panels</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Function to refresh the images every 5 seconds
+        function refreshImages() {
+            var image1 = document.getElementById("image1");
+            var image2 = document.getElementById("image2");
+            var image3 = document.getElementById("image3");
+            image1.src = image1.src.split("?")[0] + "?" + new Date().getTime();
+            image2.src = image2.src.split("?")[0] + "?" + new Date().getTime();
+            image3.src = image3.src.split("?")[0] + "?" + new Date().getTime();
+        }
+        setInterval(refreshImages, 5000);
+    </script>
 </head>
 <body>
-    <h1>Map Example</h1>
-    <div id="image-container">
-      <img id="image" src="static/images/image.png">
+    <h1>Graph Panels</h1>
+    <div style="display: flex;">
+        <div style="flex: 1; margin-right: 20px;">
+            <h2>Graph Panel 1</h2>
+            <img id="image1" src="{{ url_for('static', filename='images/graph1.png') }}" width="400" height="300">
+        </div>
+        <div style="flex: 1; margin-right: 20px;">
+            <h2>Graph Panel 2</h2>
+            <img id="image2" src="{{ url_for('static', filename='images/graph2.png') }}" width="400" height="300">
+        </div>
+        <div style="flex: 1;">
+            <h2>Graph Panel 3</h2>
+            <img id="image3" src="{{ url_for('static', filename='images/graph3.png') }}" width="400" height="300">
+        </div>
     </div>
+<h2>Map Example</h2>
+<!--    <div id="image-container">-->
+<!--      <img id="image" src="static/images/image.png">-->
+<!--    </div>-->
     <script>
       function refreshImage() {
         var image = document.getElementById("image");
