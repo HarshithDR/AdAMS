@@ -17,6 +17,7 @@ def b64encode_filter(s):
 # def index():
 #     return render_template("index.html")
 
+
 @app.route('/')
 def index():
     global data
