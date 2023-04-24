@@ -5,6 +5,16 @@
 </head>
 <body>
     <h1>Map Example</h1>
+    <div id="image-container">
+      <img id="image" src="static/images/image.png">
+    </div>
+    <script>
+      function refreshImage() {
+        var image = document.getElementById("image");
+        image.src = image.src.split("?")[0] + "?" + new Date().getTime();
+      }
+      setInterval(refreshImage, 5000);
+    </script>
     <img src="data:image/png;base64,{{ image_data|b64encode }}" alt="Map Image">
 </body>
 </html>

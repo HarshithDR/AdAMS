@@ -19,6 +19,14 @@ def b64encode_filter(s):
 
 @app.route('/')
 def index():
+    global data
+    value= 10
+    data.pop(0)
+    data.append(value)
+    buffer = generate_graph()
+    buffer.seek(0)
+    # return render_template("index.html")
+    # return buffer.read()
     # Set up the longitude and latitude coordinates for the location
     lat = 12.9724
     lon = 77.5806
