@@ -1,49 +1,133 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title><!DOCTYPE html>
 <html>
 <head>
-    <title>My Flask App</title>
+    <title>A.D.A.M.S</title>
+<!--    <meta http-equiv="refresh" content="1">-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        // Function to refresh the page every 1 second
-        setInterval(function() {
-            location.reload();
-        }, 1000);
+        // Function to refresh the images every 1 seconds
+        function refreshImages() {
+            var image1 = document.getElementById("image1");
+            var image2 = document.getElementById("image2");
+            var image3 = document.getElementById("image3");
+            image1.src = image1.src.split("?")[0] + "?" + new Date().getTime();
+            image2.src = image2.src.split("?")[0] + "?" + new Date().getTime();
+            image3.src = image3.src.split("?")[0] + "?" + new Date().getTime();
+        }
+        setInterval(refreshImages, 1000);
     </script>
 </head>
 <body>
-    <h1>My Flask App</h1>
+    <style>
+        /* Set the page width to fit all content without scrolling */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+<!--            overflow: hidden;-->
+        }
+        /* Create a container for the left alert table */
+        .alert-container {
+        width: 20%;
+        height: 100%;
+        background-color: #f1f1f1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        left: 0; /* Add this property to push the container to the left */
+        }
+        /* Style for the alert table */
+        table {
+            border-collapse: collapse;
+            margin-top: 20px;
+            width: 80%;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        /* Style for the graph panels and map */
+        .panel-container {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    float: right; /* Add this property to push the container to the right */
+}
+        .panel {
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .panel h2 {
+            margin-top: 0;
+        }
+        .panel img {
+            margin-top: 20px;
+            width: 100%;
+            height: auto;
+        }
+    </style>
+        <div style="display: flex;">
+        <h1>Alert Table</h1>
+        <table>
+            <tr>
+                <th>Alert</th>
+                <th>Status</th>
+                <th>Time</th>
+            </tr>
+            <tr>
+                <td>Alert 1</td>
+                <td>Active</td>
+                <td>10:00 AM</td>
+            </tr>
+            <tr>
+                <td>Alert 2</td>
+                <td>Inactive</td>
+                <td>9:30 AM</td>
+            </tr>
+             <tr>
+                <td>Alert 3</td>
+                <td>Inactive</td>
+                <td>9:30 AM</td>
+            </tr>
+        </table>
+    </div>
+    <h1>Graph Panels</h1>
     <div style="display: flex;">
         <div style="flex: 1; margin-right: 20px;">
             <h2>Graph Panel 1</h2>
-            <img src="{{ url_for('static', filename='images/Graph_Panel_1.png') }}" width="400" height="300">
+            <img id="image1" src="{{ url_for('static', filename='images/graph1.png') }}" width="300" height="300">
         </div>
         <div style="flex: 1; margin-right: 20px;">
             <h2>Graph Panel 2</h2>
-            <img src="{{ url_for('static', filename='images/Graph_Panel_2.png') }}" width="400" height="300">
+            <img id="image2" src="{{ url_for('static', filename='images/graph2.png') }}" width="300" height="300">
         </div>
         <div style="flex: 1;">
             <h2>Graph Panel 3</h2>
-            <img src="{{ url_for('static', filename='images/Graph_Panel_3.png') }}" width="400" height="300">
+            <img id="image3" src="{{ url_for('static', filename='images/graph3.png') }}" width="300" height="300">
         </div>
     </div>
-    <div>
-        <h2>Map Panel</h2>
-        <img src="{{ map_panel }}" width="600" height="400">
+<h2>Map Example</h2>
+    <div id="image-container">
+      <img id="image" src="static/images/image.png">
     </div>
-    <div>
-        <h2>Event Panel</h2>
-        <ul>
-            <li>{{ event_panel }}</li>
-        </ul>
-    </div>
-</body>
-</html></title>
-</head>
-<body>
-
+    <script>
+      function refreshImage() {
+        var image = document.getElementById("image");
+        image.src = image.src.split("?")[0] + "?" + new Date().getTime();
+      }
+      setInterval(refreshImage, 5000);
+    </script>
+    <img src="data:image/png;base64,{{ image_data|b64encode }}" alt="Map Image">
 </body>
 </html>

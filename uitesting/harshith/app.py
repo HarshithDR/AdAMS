@@ -1,74 +1,98 @@
+from flask import Flask, render_template, redirect, url_for
 import time
+import requests
+import base64
+from io import BytesIO
 import matplotlib.pyplot as plt
-from flask import Flask, render_template
 
 app = Flask(__name__)
 
-# Initialize list with 60 zeroes
-data_list = [0] * 60
+#graph variables
+data1 = [0] * 60
+data2 = [0] * 60
+data3 = [0] * 60
+count = 0
 
-# Function to update data_list with user input
-def update_data_list(value):
-    data_list.pop(0)
-    data_list.append(value)
+@app.template_filter('b64encode')
+def b64encode_filter(s):
+    return base64.b64encode(s).decode('utf-8')
 
-# Route for the main web page
+def generate_graph(data):
+    plt.plot(range(len(data)), data)
+    plt.xlabel('Time (s)')
+    plt.ylabel('Value')
+    plt.title('Data vs Time')
+    buffer = BytesIO()
+    global count
+    count = count+1
+    plt.savefig("static/images/graph"+ str(count)+".png", format='png')
+    buffer.seek(0)
+    plt.close()
+    return buffer
+
 @app.route('/')
 def index():
-    # Get current time
-    current_time = time.strftime("%H:%M:%S", time.localtime())
+    global data1, data2, data3
 
-    # Render three graph panels with data_list
-    graph1 = generate_graph_panel(data_list, 'Graph Panel 1')
-    graph2 = generate_graph_panel(data_list, 'Graph Panel 2')
-    graph3 = generate_graph_panel(data_list, 'Graph Panel 3')
+    #retrive this values from live database
+    value1 = 10  # example value for graph 1
+    value2 = 20  # example value for graph 2
+    value3 = 30  # example value for graph 3
 
-    # Render map panel with Mapbox API
-    map_panel = generate_map_panel()
+    #graph generation algorithm
+    data1.pop(0)
+    data1.append(value1)
 
-    # Render event panel
-    sleep_status = False
-    crash_status = False
-    alcohol_status = False
-    event_panel = generate_event_panel(sleep_status, crash_status, alcohol_status)
+    data2.pop(0)
+    data2.append(value2)
 
-    # Render main page with all components
-    return render_template('index.html', current_time=current_time, graph1=graph1, graph2=graph2, graph3=graph3, map_panel=map_panel, event_panel=event_panel)
+    data3.pop(0)
+    data3.append(value3)
 
-# Function to generate a graph panel with data_list
-def generate_graph_panel(data, title):
-    plt.figure(figsize=(6, 4))
-    plt.plot(data)
-    plt.title(title)
-    plt.xlabel('Time')
-    plt.ylabel('Value')
-    plt.grid(True)
-    plt.savefig('static/images/{}.png'.format(title.replace(" ", "_")))
-    plt.close()
-    return title.replace(" ", "_")
+    buffer1 = generate_graph(data1)
+    buffer2 = generate_graph(data2)
+    buffer3 = generate_graph(data3)
 
-# Function to generate a map panel with Mapbox API
-def generate_map_panel():
-    # Use your own Mapbox API key and coordinates
-    api_key = 'pk.eyJ1Ijoiam9obi1kZW82NTQ2NjQ2NCIsImEiOiJjbGd0NXBmbWMxMGUwM2dvMmhleHByazhyIn0.KYJ2IhAhKanhB-5eD3XwVQ'
-    latitude = '12.9724'
-    longitude = '77.5806'
-    map_url = 'https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/{},{},15,0,0/600x400?access_token={}'.format(longitude, latitude, api_key)
-    return map_url
+    buffer1.seek(0)
+    buffer2.seek(0)
+    buffer3.seek(0)
 
-# Function to generate an event panel
-def generate_event_panel(sleep_status, crash_status, alcohol_status):
-    sleep_alert = ''
-    crash_alert = ''
-    alcohol_alert = ''
-    if sleep_status:
-        sleep_alert = 'Sleep status: True'
-    if crash_status:
-        crash_alert = 'Crash status: True'
-    if alcohol_status:
-        alcohol_alert = 'Alcohol status: True'
-    return '{}<br>{}<br>{}'.format(sleep_alert, crash_alert, alcohol_alert)
 
-# Main function to run the Flask app
+    #algorithm for map data retrive
+    # Set up the longitude and latitude coordinates for the location
+    lat = 12.9724
+    lon = 77.5806
+
+    # Construct the URL for the OpenMapTiles API call
+    url = f"https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/pin-s-l+9ed4bd({lon},{lat})/{lon},{lat},14.5,0,0/800x600?access_token=pk.eyJ1Ijoiam9obi1kZW82NTQ2NjQ2NCIsImEiOiJjbGd0NXBmbWMxMGUwM2dvMmhleHByazhyIn0.KYJ2IhAhKanhB-5eD3XwVQ"
+
+    # Make a request to the API and get the image data
+    response = requests.get(url)
+    image_data = response.content
+
+    # Render the template with the image data and graph buffers
+    return render_template('index.html', image_data=image_data, buffer1=buffer1.read(), buffer2=buffer2.read(), buffer3=buffer3.read())
+
+# @app.route("/update/<int:graph>/<int:value>")
+# def update(graph, value):
+#     global data1, data2, data3
+#
+#     if graph == 1:
+#         data = data1
+#     elif graph == 2:
+#         data = data2
+#     elif graph == 3:
+#         data = data3
+#
+#     data.pop(0)
+#     data.append(value)
+#
+#     buffer = generate_graph(data)
+#     buffer.seek(0)
+#
+#     return redirect(url_for("index"))
+
+
+
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=True)

@@ -2,5 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/sensors_testing/Adafruit_Python_ADS1x15" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/sensors_testing/Adafruit_Python_DHT" vcs="Git" />
   </component>
 </project>
