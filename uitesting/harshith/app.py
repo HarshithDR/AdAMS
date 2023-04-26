@@ -11,7 +11,7 @@ app = Flask(__name__)
 data1 = [0] * 60
 data2 = [0] * 60
 data3 = [0] * 60
-count = 0
+# count = 0
 
 # Define alert thresholds
 ALERT_THRESHOLD_1 = True
@@ -22,15 +22,13 @@ ALERT_THRESHOLD_3 = True
 def b64encode_filter(s):
     return base64.b64encode(s).decode('utf-8')
 
-def generate_graph(data):
+def generate_graph(data,num):
     plt.plot(range(len(data)), data)
     plt.xlabel('Time (s)')
     plt.ylabel('Value')
     plt.title('Data vs Time')
     buffer = BytesIO()
-    global count
-    count = count+1
-    plt.savefig("static/images/graph"+ str(count)+".png", format='png')
+    plt.savefig("static/images/graph"+ num+".png", format='png')
     buffer.seek(0)
     plt.close()
     return buffer
@@ -56,9 +54,9 @@ def index():
     data3.pop(0)
     data3.append(value3)
 
-    buffer1 = generate_graph(data1)
-    buffer2 = generate_graph(data2)
-    buffer3 = generate_graph(data3)
+    buffer1 = generate_graph(data1,'1')
+    buffer2 = generate_graph(data2,'2')
+    buffer3 = generate_graph(data3,'3')
 
     buffer1.seek(0)
     buffer2.seek(0)
