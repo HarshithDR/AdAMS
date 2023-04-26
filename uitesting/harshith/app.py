@@ -13,6 +13,11 @@ data2 = [0] * 60
 data3 = [0] * 60
 count = 0
 
+# Define alert thresholds
+ALERT_THRESHOLD_1 = True
+ALERT_THRESHOLD_2 = True
+ALERT_THRESHOLD_3 = True
+
 @app.template_filter('b64encode')
 def b64encode_filter(s):
     return base64.b64encode(s).decode('utf-8')
@@ -32,6 +37,8 @@ def generate_graph(data):
 
 @app.route('/')
 def index():
+
+
     global data1, data2, data3
 
     #retrive this values from live database
@@ -70,29 +77,15 @@ def index():
     response = requests.get(url)
     image_data = response.content
 
-    # Render the template with the image data and graph buffers
-    return render_template('index.html', image_data=image_data, buffer1=buffer1.read(), buffer2=buffer2.read(), buffer3=buffer3.read())
-
-# @app.route("/update/<int:graph>/<int:value>")
-# def update(graph, value):
-#     global data1, data2, data3
-#
-#     if graph == 1:
-#         data = data1
-#     elif graph == 2:
-#         data = data2
-#     elif graph == 3:
-#         data = data3
-#
-#     data.pop(0)
-#     data.append(value)
-#
-#     buffer = generate_graph(data)
-#     buffer.seek(0)
-#
-#     return redirect(url_for("index"))
+    # Check for alerts and set the alert flag
+    alert1 = ALERT_THRESHOLD_1
+    alert2 = ALERT_THRESHOLD_2
+    alert3 = ALERT_THRESHOLD_3
 
 
+    # Render the template with the image data, graph buffers, and alert flags
+    return render_template('index.html', image_data=image_data, buffer1=buffer1.read(), buffer2=buffer2.read(),
+                           buffer3=buffer3.read(), alert1=alert1, alert2=alert2, alert3=alert3)
 
 if __name__ == '__main__':
     app.run(debug=True)

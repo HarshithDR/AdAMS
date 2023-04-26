@@ -2,7 +2,10 @@
 <html>
 <head>
     <title>A.D.A.M.S</title>
-<!--    <meta http-equiv="refresh" content="1">-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         // Function to refresh the images every 1 seconds
@@ -16,28 +19,31 @@
         }
         setInterval(refreshImages, 1000);
     </script>
-</head>
-<body>
     <style>
         /* Set the page width to fit all content without scrolling */
         html, body {
             margin: 0;
             padding: 0;
             height: 100%;
-<!--            overflow: hidden;-->
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F5F5F5;
         }
         /* Create a container for the left alert table */
         .alert-container {
-        width: 20%;
-        height: 100%;
-        background-color: #f1f1f1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: fixed;
-        left: 0; /* Add this property to push the container to the left */
+            width: 20%;
+            height: 100%;
+            background-color: #EFEFEF;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            left: 0;
         }
+
+
         /* Style for the alert table */
         table {
             border-collapse: collapse;
@@ -50,34 +56,86 @@
             border-bottom: 1px solid #ddd;
         }
         th {
-            background-color: #f2f2f2;
+            background-color: #F0F0F0;
+        }
+        td {
+            font-weight: bold;
+        }
+        td.status-active {
+            color: #4CAF50;
+        }
+        td.status-inactive {
+            color: #F44336;
         }
         /* Style for the graph panels and map */
         .panel-container {
-    width: 80%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    float: right; /* Add this property to push the container to the right */
-}
+            width: 80%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            float: right;
+        }
         .panel {
             width: 30%;
             display: flex;
             flex-direction: column;
             align-items: center;
+            background-color: #FFFFFF;
+            border: 1px solid #EFEFEF;
+            border-radius: 5px;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
         }
         .panel h2 {
             margin-top: 0;
+            font-size: 24px;
+            font-weight: normal;
+            color: #333333;
+            text-align: center;
+            padding: 20px;
+            border-bottom: 1px solid #EFEFEF;
+            width: 100%;
         }
         .panel img {
             margin-top: 20px;
             width: 100%;
             height: auto;
         }
-    </style>
-        <div style="display: flex;">
+        h1 {
+            font-size: 32px;
+            font-weight: bold;
+            color: #333333;
+            margin: 20px 0;
+        }
+            </style>
+</head>
+<body>
+    {% if alert1 %}
+    <script>
+    $(document).ready(function() {
+      alert('collision detected');
+    });
+    </script>
+    {% endif %}
+
+        {% if alert2 %}
+    <script>
+    $(document).ready(function() {
+      alert('driver sleeping');
+    });
+    </script>
+    {% endif %}
+
+        {% if alert3 %}
+    <script>
+    $(document).ready(function() {
+      alert('alcohol detected');
+    });
+    </script>
+    {% endif %}
+
+    <div class="alert-container">
         <h1>Alert Table</h1>
         <table>
             <tr>
@@ -86,41 +144,39 @@
                 <th>Time</th>
             </tr>
             <tr>
-                <td>Alert 1</td>
-                <td>Active</td>
+                <td>collision</td>
+                <td>{{alert1}}</td>
                 <td>10:00 AM</td>
             </tr>
             <tr>
-                <td>Alert 2</td>
-                <td>Inactive</td>
+                <td>drowsy</td>
+                <td>{{alert2}}</td>
                 <td>9:30 AM</td>
             </tr>
-             <tr>
-                <td>Alert 3</td>
-                <td>Inactive</td>
+            <tr>
+                <td>Alcohol</td>
+                <td>{{alert3}}</td>
                 <td>9:30 AM</td>
             </tr>
         </table>
     </div>
-    <h1>Graph Panels</h1>
-    <div style="display: flex;">
-        <div style="flex: 1; margin-right: 20px;">
+    <div class="panel-container">
+        <div class="panel">
             <h2>Graph Panel 1</h2>
             <img id="image1" src="{{ url_for('static', filename='images/graph1.png') }}" width="300" height="300">
         </div>
-        <div style="flex: 1; margin-right: 20px;">
+        <div class="panel">
             <h2>Graph Panel 2</h2>
             <img id="image2" src="{{ url_for('static', filename='images/graph2.png') }}" width="300" height="300">
         </div>
-        <div style="flex: 1;">
+        <div class="panel">
             <h2>Graph Panel 3</h2>
             <img id="image3" src="{{ url_for('static', filename='images/graph3.png') }}" width="300" height="300">
         </div>
     </div>
+
 <h2>Map Example</h2>
-    <div id="image-container">
-      <img id="image" src="static/images/image.png">
-    </div>
+
     <script>
       function refreshImage() {
         var image = document.getElementById("image");
@@ -129,5 +185,6 @@
       setInterval(refreshImage, 5000);
     </script>
     <img src="data:image/png;base64,{{ image_data|b64encode }}" alt="Map Image">
+
 </body>
 </html>

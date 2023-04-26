@@ -4,23 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="419a5630-788b-4911-a115-928ae6c530e0" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/uitesting/harshith/static/images/graph1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uitesting/harshith/static/images/graph2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uitesting/harshith/static/images/graph3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uitesting/harshith/static/images/graph4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uitesting/harshith/static/images/graph5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uitesting/harshith/static/images/graph6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uitesting/harshith/templates/collision.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="419a5630-788b-4911-a115-928ae6c530e0" name="Changes" comment="ui update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/uitesting/harshith/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/uitesting/harshith/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uitesting/harshith/static/images/Graph_Panel_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uitesting/harshith/static/images/Graph_Panel_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uitesting/harshith/static/images/Graph_Panel_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uitesting/harshith/templates/collision.html" beforeDir="false" afterPath="$PROJECT_DIR$/uitesting/harshith/templates/collision.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/uitesting/harshith/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/uitesting/harshith/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uitesting/notif/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/uitesting/notif/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +95,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="app (3)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="AdAMS" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/uitesting/notif" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/uitesting/notif/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="AdAMS" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -131,6 +140,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.app (1)" />
+        <item itemvalue="Python.app (3)" />
         <item itemvalue="Python.app (2)" />
         <item itemvalue="Python.app" />
       </list>
@@ -173,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682359034738</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="ui update">
+      <created>1682528043719</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1682528043719</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -181,6 +198,7 @@
     <MESSAGE value="integrated by gagan" />
     <MESSAGE value="working one graph code" />
     <MESSAGE value="working one graph and map code" />
-    <option name="LAST_COMMIT_MESSAGE" value="working one graph and map code" />
+    <MESSAGE value="ui update" />
+    <option name="LAST_COMMIT_MESSAGE" value="ui update" />
   </component>
 </project>
