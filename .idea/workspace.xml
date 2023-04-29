@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="419a5630-788b-4911-a115-928ae6c530e0" name="Changes" comment="working ui">
+    <list default="true" id="419a5630-788b-4911-a115-928ae6c530e0" name="Changes" comment="not working">
+      <change afterPath="$PROJECT_DIR$/test/mesh.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uitesting/harshith/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/uitesting/harshith/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uitesting/harshith/static/images/graph1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uitesting/harshith/static/images/graph2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uitesting/harshith/static/images/graph3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uitesting/harshith/static/images/graph4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uitesting/harshith/static/images/graph5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uitesting/harshith/static/images/graph6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uitesting/harshith/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/uitesting/harshith/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +17,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -41,17 +35,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Harshith/python projects/adams/uitesting/harshith/static/images"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Harshith/python projects/adams/uitesting/harshith/static/images&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Harshith\python projects\adams\uitesting\harshith\static\images" />
@@ -202,8 +196,26 @@
       <option name="project" value="LOCAL" />
       <updated>1682531912487</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="not working">
+      <created>1682535086978</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1682535086978</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -212,6 +224,7 @@
     <MESSAGE value="working one graph and map code" />
     <MESSAGE value="ui update" />
     <MESSAGE value="working ui" />
-    <option name="LAST_COMMIT_MESSAGE" value="working ui" />
+    <MESSAGE value="not working" />
+    <option name="LAST_COMMIT_MESSAGE" value="not working" />
   </component>
 </project>
