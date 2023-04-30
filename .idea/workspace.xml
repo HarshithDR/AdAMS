@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="419a5630-788b-4911-a115-928ae6c530e0" name="Changes" comment="not working">
-      <change afterPath="$PROJECT_DIR$/test/mesh.py" afterDir="false" />
+    <list default="true" id="419a5630-788b-4911-a115-928ae6c530e0" name="Changes" comment="mesh">
+      <change afterPath="$PROJECT_DIR$/test/BraTS20_Training_001_flair.nii" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/BraTS20_Training_001_seg.nii" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/BraTS20_Training_001_t1ce.nii" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/BraTS20_Training_001_t2.nii" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/mesh.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/mesh.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,8 +54,11 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Harshith\python projects\adams\uitesting\harshith\static\images" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Harshith\python projects\adams\test" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.app (1)">
+  <component name="RunManager" selected="Python.mesh">
     <configuration name="app (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="AdAMS" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -136,8 +143,30 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="mesh" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="AdAMS" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/mesh.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.mesh" />
         <item itemvalue="Python.app (1)" />
         <item itemvalue="Python.app (3)" />
         <item itemvalue="Python.app (2)" />
@@ -203,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682535086978</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="mesh">
+      <created>1682783431753</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1682783431753</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -225,6 +261,7 @@
     <MESSAGE value="ui update" />
     <MESSAGE value="working ui" />
     <MESSAGE value="not working" />
-    <option name="LAST_COMMIT_MESSAGE" value="not working" />
+    <MESSAGE value="mesh" />
+    <option name="LAST_COMMIT_MESSAGE" value="mesh" />
   </component>
 </project>

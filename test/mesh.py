@@ -4,7 +4,9 @@ from stl import mesh
 from skimage import measure
 
 # Path to the nifti file (.nii, .nii.gz)
-file_path = 'C:/Users/amith/Downloads/final_project/input/BraTS20_Training_001/BraTS20_Training_001_t1.nii'
+file_path = 'BraTS20_Training_001_t2.nii'
+
+print('loading right now')
 
 # Extract the numpy array
 nifti_file = nib.load(file_path)
