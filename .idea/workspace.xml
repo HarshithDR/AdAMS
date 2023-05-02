@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="419a5630-788b-4911-a115-928ae6c530e0" name="Changes" comment="update">
+    <list default="true" id="419a5630-788b-4911-a115-928ae6c530e0" name="Changes" comment="circuit diagram upload">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sensors_testing/gps.py" beforeDir="false" afterPath="$PROJECT_DIR$/sensors_testing/gyro_acclero.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sensors_testing/gyro_acclero.py" beforeDir="false" afterPath="$PROJECT_DIR$/sensors_testing/gyro_acclero.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +52,7 @@
       <recent name="C:\Harshith\python projects\adams\uitesting\harshith\static\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Harshith\python projects\adams\sensors_testing\documentation" />
       <recent name="C:\Harshith\python projects\adams\test" />
     </key>
   </component>
@@ -257,7 +258,28 @@
       <option name="project" value="LOCAL" />
       <updated>1683028310695</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="gyro test code">
+      <created>1683039543637</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1683039543638</updated>
+    </task>
+    <task id="LOCAL-00013" summary="updates">
+      <created>1683039906256</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1683039906256</updated>
+    </task>
+    <task id="LOCAL-00014" summary="circuit diagram upload">
+      <created>1683039925574</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1683039925574</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -281,6 +303,9 @@
     <MESSAGE value="not working" />
     <MESSAGE value="mesh" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="gyro test code" />
+    <MESSAGE value="updates" />
+    <MESSAGE value="circuit diagram upload" />
+    <option name="LAST_COMMIT_MESSAGE" value="circuit diagram upload" />
   </component>
 </project>
