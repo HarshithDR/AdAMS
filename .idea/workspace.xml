@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="419a5630-788b-4911-a115-928ae6c530e0" name="Changes" comment="mesh">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="419a5630-788b-4911-a115-928ae6c530e0" name="Changes" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sensors_testing/temperature_ds18b20.py" beforeDir="false" afterPath="$PROJECT_DIR$/sensors_testing/temperature_ds18b20.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sensors_testing/gps.py" beforeDir="false" afterPath="$PROJECT_DIR$/sensors_testing/gyro_acclero.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -251,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682838462578</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="update">
+      <created>1683028310695</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1683028310695</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -274,6 +280,7 @@
     <MESSAGE value="working ui" />
     <MESSAGE value="not working" />
     <MESSAGE value="mesh" />
-    <option name="LAST_COMMIT_MESSAGE" value="mesh" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
 </project>
