@@ -62,7 +62,6 @@ def ambient_humidity_temperature():
     print('Temp: {0:0.1f} C  Humidity: {1:0.1f} %'.format(temperature, humidity))
     return temperature, humidity
 
-
 def read_temp_raw(device_file):
     f = open(device_file, 'r')
     lines = f.readlines()
