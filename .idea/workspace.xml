@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="419a5630-788b-4911-a115-928ae6c530e0" name="Changes" comment="hardware integration code">
-      <change afterPath="$PROJECT_DIR$/sensors_testing/gps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/adams.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/adams.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hardware_integration/integrate.py" beforeDir="false" afterPath="$PROJECT_DIR$/hardware_integration/integrate.py" afterDir="false" />
-    </list>
+    <list default="true" id="419a5630-788b-4911-a115-928ae6c530e0" name="Changes" comment="update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -303,7 +298,28 @@
       <option name="project" value="LOCAL" />
       <updated>1683048496423</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="hardware integration code">
+      <created>1683048861169</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1683048861169</updated>
+    </task>
+    <task id="LOCAL-00019" summary="hardware integration code">
+      <created>1683049049996</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1683049049996</updated>
+    </task>
+    <task id="LOCAL-00020" summary="update">
+      <created>1683049226446</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1683049226446</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -326,13 +342,13 @@
     <MESSAGE value="working ui" />
     <MESSAGE value="not working" />
     <MESSAGE value="mesh" />
-    <MESSAGE value="update" />
     <MESSAGE value="gyro test code" />
     <MESSAGE value="updates" />
     <MESSAGE value="circuit diagram upload" />
     <MESSAGE value="gyro and accelero test" />
     <MESSAGE value="clear unwanted files" />
     <MESSAGE value="hardware integration code" />
-    <option name="LAST_COMMIT_MESSAGE" value="hardware integration code" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
 </project>
