@@ -8,6 +8,8 @@ import os
 import glob
 import Adafruit_ADS1x15
 from mpu6050 import mpu6050
+import serial
+import pynmea2
 
 # ---------------------------------------------------------------------
 #gyro and accelero setup
@@ -32,6 +34,9 @@ os.system('modprobe w1-therm')
 
 base_dir = '/sys/bus/w1/devices/'
 device_folders = glob.glob(base_dir + '28*')
+
+#gps config
+ser = serial.Serial('/dev/serial0', baudrate=9600, timeout=1)
 
 # --------------------------------------------------------------------------
 
@@ -101,4 +106,22 @@ def temperature_ds18b20():
         temp.append(read_temp(device_file))
     return temp
 
+def gps():
+    try:
+        # Read the GPS data from the serial connection
+        data = ser.readline().decode('ascii', errors='replace')
+
+        # Parse the NMEA sentence
+        if data[0:6] == '$GPGGA':
+            msg = pynmea2.parse(data)
+
+            # Extract the latitude and longitude values
+            lat = msg.latitude
+            lon = msg.longitude
+
+            # Print the latitude and longitude values
+            print(f"Latitude: {lat:.6f}, Longitude: {lon:.6f}")
+            return lat, lon
+    except:
+        return 'not connected'
 
