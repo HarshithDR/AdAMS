@@ -43,12 +43,9 @@ ser = serial.Serial('/dev/serial0', baudrate=9600, timeout=1)
 def gyro():
     gyro = sensor.get_gyro_data()
     print(f"Gyro: x={gyro['x']}, y={gyro['y']}, z={gyro['z']}")
-    return gyro
-
-def acceleration():
     acceleration = sensor.get_accel_data()
     print(f"Acceleration: x={acceleration['x']}, y={acceleration['y']}, z={acceleration['z']}")
-    return acceleration
+    return gyro, acceleration
 
 def impact():
     input_state = GPIO.input(17)
@@ -125,3 +122,10 @@ def gps():
     except:
         return 'not connected'
 
+if __name__ == '__main__':
+    gyro()
+    alcohol()
+    gps()
+    temperature_ds18b20()
+    impact()
+    ambient_humidity_temperature()
