@@ -29,4 +29,4 @@ while True:
     for device_folder in device_folders:
         device_file = device_folder + '/w1_slave'
         print("Temperature sensor", device_folder[-15:], ":", read_temp(device_file), "C")
-    time.sleep(1)
+    time.sleep(0.5)

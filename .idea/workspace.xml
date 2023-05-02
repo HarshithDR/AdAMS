@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="419a5630-788b-4911-a115-928ae6c530e0" name="Changes" comment="mesh">
-      <change afterPath="$PROJECT_DIR$/test/BraTS20_Training_001_flair.nii" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/BraTS20_Training_001_seg.nii" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/BraTS20_Training_001_t1ce.nii" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/BraTS20_Training_001_t2.nii" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/mesh.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/mesh.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sensors_testing/temperature_ds18b20.py" beforeDir="false" afterPath="$PROJECT_DIR$/sensors_testing/temperature_ds18b20.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +44,8 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Harshith/python projects/adams/uitesting/harshith/static/images&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Harshith/python projects/adams&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -239,7 +237,21 @@
       <option name="project" value="LOCAL" />
       <updated>1682783431753</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="mesh">
+      <created>1682838341496</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1682838341496</updated>
+    </task>
+    <task id="LOCAL-00010" summary="mesh">
+      <created>1682838462578</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1682838462578</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
