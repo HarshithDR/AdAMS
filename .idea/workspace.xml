@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="419a5630-788b-4911-a115-928ae6c530e0" name="Changes" comment="gps working">
-      <change beforePath="$PROJECT_DIR$/hardware_integration/integrate.py" beforeDir="false" afterPath="$PROJECT_DIR$/hardware_integration/integrate.py" afterDir="false" />
+    <list default="true" id="419a5630-788b-4911-a115-928ae6c530e0" name="Changes" comment="integration code ready">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -328,7 +328,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683049312892</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="integration code ready">
+      <created>1683052231949</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1683052231949</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -359,6 +366,7 @@
     <MESSAGE value="hardware integration code" />
     <MESSAGE value="update" />
     <MESSAGE value="gps working" />
-    <option name="LAST_COMMIT_MESSAGE" value="gps working" />
+    <MESSAGE value="integration code ready" />
+    <option name="LAST_COMMIT_MESSAGE" value="integration code ready" />
   </component>
 </project>
