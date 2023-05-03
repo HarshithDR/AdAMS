@@ -17,7 +17,7 @@ sensor = mpu6050(0x68) # Address of MPU-6050 on the I2C bus
 
 #impact setup
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(26, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 # mq3(alcohol sensor) config
 adc = Adafruit_ADS1x15.ADS1115()
@@ -44,11 +44,13 @@ def gyro():
     return gyro, acceleration
 
 def impact():
-    input_state = GPIO.input(17)
+    input_state = GPIO.input(26)
     if input_state == False:
         print('Button Pressed')
+        return True
+    else:
+        print('no crash detected')
         return False
-    return True
 
 def alcohol():
     value = adc.read_adc(MQ3_PIN, gain=GAIN)
@@ -58,7 +60,7 @@ def alcohol():
     return voltage
 
 def ambient_humidity_temperature():
-    humidity, temperature = Adafruit_DHT.read_retry(11, 4)
+    humidity, temperature = Adafruit_DHT.read_retry(11, 17)
     print('Temp: {0:0.1f} C  Humidity: {1:0.1f} %'.format(temperature, humidity))
     return temperature, humidity
 
