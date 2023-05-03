@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="419a5630-788b-4911-a115-928ae6c530e0" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/hardware_integration/gtest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hardware_integration/integrate.py" beforeDir="false" afterPath="$PROJECT_DIR$/hardware_integration/integrate.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -356,7 +356,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683105525213</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="update">
+      <created>1683106477575</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1683106477575</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

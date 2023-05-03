@@ -10,7 +10,6 @@ import Adafruit_ADS1x15
 from mpu6050 import mpu6050
 import serial
 import pynmea2
-import gps
 
 # ---------------------------------------------------------------------
 # gyro and accelero setup
