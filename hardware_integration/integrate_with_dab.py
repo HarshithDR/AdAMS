@@ -10,6 +10,8 @@ import Adafruit_ADS1x15
 from mpu6050 import mpu6050
 import serial
 import pynmea2
+import mysql.connector
+from mysql.connector import Error
 
 # ---------------------------------------------------------------------
 # gyro and accelero setup
@@ -33,9 +35,26 @@ device_folders = glob.glob(base_dir + '28*')
 
 # gps config
 ser = serial.Serial('/dev/serial0', baudrate=9600, timeout=1)
-
-
 # --------------------------------------------------------------------------
+
+#---------------------------------credentials------------------------------
+hostname = "1o7.h.filess.io"
+database = "adams_wearforce"
+port = "3307"
+username = "adams_wearforce"
+password = "086bb173a54213e78a9d31b06b0f32b70da0adc4"
+#-------------------------------------------------------------------------------
+
+#----------------------------db connection-----------------------
+connection = mysql.connector.connect(host=hostname, database=database, user=username, password=password,
+                                             port=port)
+if connection.is_connected():
+    db_Info = connection.get_server_info()
+    print("Connected to MySQL Server version ", db_Info)
+    cursor = connection.cursor()
+    cursor.execute("select database();")
+    record = cursor.fetchone()
+    print("You're connected to database: ", record)
 
 def gyro():
     gyro = sensor.get_gyro_data()
@@ -48,19 +67,22 @@ def gyro():
 def impact():
     input_state = GPIO.input(26)
     if input_state == False:
-        print('Button Pressed')
-        return True
+        print('crash detected')
+        return 'true'
     else:
         print('no crash detected')
-        return False
+        return 'false'
 
 
 def alcohol():
     value = adc.read_adc(MQ3_PIN, gain=GAIN)
     voltage = value / 32767.0 * 3.3  # Convert to voltage (assuming ADS1115 is set to +/- 4.096V range)
-
     print(f"Analog value: {value}, Voltage: {voltage:.2f}V")
-    return voltage
+    if voltage >= 0.9:
+        print('alcohol detected')
+        return 'true'
+    else:
+        return 'false'
 
 
 def ambient_humidity_temperature():
@@ -120,11 +142,34 @@ def gps1():
             return 'not connected'
     return lat, lon
 
+def insert_data(gyro_data,acceleration, alcohol_data, temp_data, lat,lon, impact_data,ambient_temp, humidity_data):
+  mycursor = connection.cursor()
+  sql = "INSERT INTO adams (gyro_x, gyro_y, gyro_z,accelero_x,accelero_y,accelero_z, alcohol_detect, engine_temperature, coolant_temperature," \
+        " ambient_temperature, latitude, longitute, impact_detect, humidity) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+
+  val = (gyro_data['x'], gyro_data['y'], gyro_data['z'],acceleration['x'],acceleration['y'],acceleration['z'],
+         alcohol_data, temp_data[0], temp_data[1], lat, lon, impact_data,ambient_temp, humidity_data)
+
+  mycursor.execute(sql, val)
+  connection.commit()
+
+def database(gyro_data,acceleration,alcohol_data,lat,lon,temp_data,impact_data,ambient_temp,humidity):
+    insert_data(gyro_data,acceleration, alcohol_data, temp_data,lat,lon , impact_data, ambient_temp,humidity)
+
+    # finally:
+    #     if connection.is_connected():
+    #         cursor.close()
+    #         connection.close()
+    #         print("MySQL connection is closed")
 
 if __name__ == '__main__':
-    gyro()
-    alcohol()
-    gps1()
-    temperature_ds18b20()
-    impact()
-    ambient_humidity_temperature()
+    gyro, acceleration = gyro()
+    alcohol = alcohol()
+    lat, lon = gps1()
+    temp = temperature_ds18b20()
+    crash = impact()
+    ambient_temp, humidity = ambient_humidity_temperature()
+    try:
+        database(gyro,acceleration,alcohol,lat,lon,temp,crash,ambient_temp,humidity)
+    except Error as e:
+        print("Error while connecting to MySQL", e)
