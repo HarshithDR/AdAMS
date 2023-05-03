@@ -37,17 +37,17 @@ device_folders = glob.glob(base_dir + '28*')
 ser = serial.Serial('/dev/serial0', baudrate=9600, timeout=1)
 # --------------------------------------------------------------------------
 
-#---------------------------------credentials------------------------------
+# ---------------------------------credentials------------------------------
 hostname = "1o7.h.filess.io"
 database = "adams_wearforce"
 port = "3307"
 username = "adams_wearforce"
 password = "086bb173a54213e78a9d31b06b0f32b70da0adc4"
-#-------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------
 
-#----------------------------db connection-----------------------
+# ----------------------------db connection-----------------------
 connection = mysql.connector.connect(host=hostname, database=database, user=username, password=password,
-                                             port=port)
+                                     port=port)
 if connection.is_connected():
     db_Info = connection.get_server_info()
     print("Connected to MySQL Server version ", db_Info)
@@ -55,6 +55,7 @@ if connection.is_connected():
     cursor.execute("select database();")
     record = cursor.fetchone()
     print("You're connected to database: ", record)
+
 
 def gyro():
     gyro = sensor.get_gyro_data()
@@ -142,19 +143,21 @@ def gps1():
             return 'not connected'
     return lat, lon
 
-def insert_data(gyro_data,acceleration, alcohol_data, temp_data, lat,lon, impact_data,ambient_temp, humidity_data):
-  mycursor = connection.cursor()
-  sql = "INSERT INTO adams (gyro_x, gyro_y, gyro_z,accelero_x,accelero_y,accelero_z, alcohol_detect, engine_temperature, coolant_temperature," \
-        " ambient_temperature, latitude, longitute, impact_detect, humidity) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
 
-  val = (gyro_data['x'], gyro_data['y'], gyro_data['z'],acceleration['x'],acceleration['y'],acceleration['z'],
-         alcohol_data, temp_data[0], temp_data[1], lat, lon, impact_data,ambient_temp, humidity_data)
+def insert_data(gyro_data, acceleration, alcohol_data, temp_data, lat, lon, impact_data, ambient_temp,
+                humidity_data):
+    mycursor = connection.cursor()
+    sql = "INSERT INTO adams (gyro_x, gyro_y, gyro_z,accelero_x,accelero_y,accelero_z, alcohol_detect, engine_temperature, coolant_temperature,ambient_temperature, latitude, longitude, impact_detect, Humidity) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s,%s,%s)"
 
-  mycursor.execute(sql, val)
-  connection.commit()
+    val = (gyro_data['x'],gyro_data['y'], gyro_data['z'], acceleration['x'], acceleration['y'], acceleration['z'],
+           str(alcohol_data), temp_data[0], temp_data[1], ambient_temp, lat, lon, str(impact_data), humidity_data)
 
-def database(gyro_data,acceleration,alcohol_data,lat,lon,temp_data,impact_data,ambient_temp,humidity):
-    insert_data(gyro_data,acceleration, alcohol_data, temp_data,lat,lon , impact_data, ambient_temp,humidity)
+    mycursor.execute(sql, val)
+    connection.commit()
+
+
+def database(gyro_data, acceleration, alcohol_data, lat, lon, temp_data, impact_data, ambient_temp, humidity):
+    insert_data(gyro_data, acceleration, alcohol_data, temp_data, lat, lon, impact_data, ambient_temp, humidity)
 
     # finally:
     #     if connection.is_connected():
@@ -162,14 +165,17 @@ def database(gyro_data,acceleration,alcohol_data,lat,lon,temp_data,impact_data,a
     #         connection.close()
     #         print("MySQL connection is closed")
 
+
 if __name__ == '__main__':
-    gyro, acceleration = gyro()
-    alcohol = alcohol()
-    lat, lon = gps1()
-    temp = temperature_ds18b20()
-    crash = impact()
-    ambient_temp, humidity = ambient_humidity_temperature()
-    try:
-        database(gyro,acceleration,alcohol,lat,lon,temp,crash,ambient_temp,humidity)
-    except Error as e:
-        print("Error while connecting to MySQL", e)
+    while True:
+        gyro_data, acceleration = gyro()
+        alcohol = alcohol()
+        # lat, lon = gps1()
+        temp = temperature_ds18b20()
+        crash = impact()
+        lat, lon = 0, 0
+        ambient_temp, humidity = ambient_humidity_temperature()
+        try:
+            database(gyro_data, acceleration, alcohol, lat, lon, temp, crash, ambient_temp, humidity)
+        except Error as e:
+            print("Error while connecting to MySQL", e)

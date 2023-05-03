@@ -3,10 +3,13 @@ import mysql.connector
 from mysql.connector import Error
 
 
-def insert_data(gyro_data, alcohol_data, temp_data, gps_data, impact_data, humidity_data):
+def insert_data(gyro_data,acceleration, alcohol_data, temp_data, lat,lon, impact_data,ambient_temp, humidity_data):
   mycursor = connection.cursor()
-  sql = "INSERT INTO adams (gyro_x, gyro_y, gyro_z, alcohol_detect, engine_temperature, coolant_temperature, ambient_temperature, latitude, longitute, impact_detect, humidity) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-  val = (gyro_data['x'], gyro_data['y'], gyro_data['z'], alcohol_data, temp_data[0], temp_data[1], temp_data[2], gps_data[0], gps_data[1], impact_data, humidity_data)
+  sql = "INSERT INTO adams (gyro_x, gyro_y, gyro_z,accelero_x,accelero_y,accelero_z, alcohol_detect, engine_temperature, coolant_temperature,ambient_temperature, latitude, longitude, impact_detect, Humidity) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s,%s,%s)"
+
+  val = (gyro_data['x'], gyro_data['y'], gyro_data['z'], acceleration[0], acceleration[1], acceleration[2],
+         str(alcohol_data), temp_data[0], temp_data[1], ambient_temp, lat, lon, str(impact_data), humidity_data)
+
   mycursor.execute(sql, val)
   connection.commit()
 
@@ -30,14 +33,14 @@ try:
         record = cursor.fetchone()
         print("You're connected to database: ", record)
 
-        gyro_data = {"x": 123, "y": 23, "z": 123}
-        alcohol_data = True
-        temp_data = [213, 324, 213]
-        gps_data = [21341, 1234]
-        impact_data = False
-        humidity_data = 234.23
-
-        insert_data(gyro_data, alcohol_data, temp_data, gps_data, impact_data, humidity_data)
+        gyro, acceleration = {'x':6.546565956595659562,'y':0,'z':0},[651,541,654]
+        alcohol = 'false'
+        # lat, lon = gps1()
+        temp = [0,0]
+        crash = 'fasle'
+        lat, lon = 0, 0
+        ambient_temp, humidity = 123,123
+        insert_data(gyro,acceleration, alcohol, temp,lat,lon , crash, ambient_temp,humidity)
 
 except Error as e:
 
