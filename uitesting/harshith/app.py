@@ -14,9 +14,9 @@ data3 = [0] * 60
 # count = 0
 
 # Define alert thresholds
-ALERT_THRESHOLD_1 = True
-ALERT_THRESHOLD_2 = True
-ALERT_THRESHOLD_3 = True
+ALERT_THRESHOLD_1 = False
+ALERT_THRESHOLD_2 = False
+ALERT_THRESHOLD_3 = False
 
 @app.template_filter('b64encode')
 def b64encode_filter(s):

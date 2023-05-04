@@ -38,11 +38,11 @@ ser = serial.Serial('/dev/serial0', baudrate=9600, timeout=1)
 # --------------------------------------------------------------------------
 
 # ---------------------------------credentials------------------------------
-hostname = "1o7.h.filess.io"
-database = "adams_wearforce"
+hostname = "p0x.h.filess.io"
+database= "adamsProject_expectweak"
 port = "3307"
-username = "adams_wearforce"
-password = "086bb173a54213e78a9d31b06b0f32b70da0adc4"
+username = "adamsProject_expectweak"
+password= "ee87623d01fa6c41224636ab9c049ec0f6a9e5a5"
 # -------------------------------------------------------------------------------
 
 # ----------------------------db connection-----------------------

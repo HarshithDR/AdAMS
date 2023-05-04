@@ -109,7 +109,7 @@
             margin: 20px 0;
         }
             </style>
-</head>+++
+</head>
 <body>
     {% if alert1 %}
     <script>
@@ -141,45 +141,41 @@
             <tr>
                 <th>Alert</th>
                 <th>Status</th>
-                <th>Time</th>
             </tr>
             <tr>
                 <td>collision</td>
                 <td>{{alert1}}</td>
-                <td>10:00 AM</td>
             </tr>
             <tr>
                 <td>drowsy</td>
                 <td>{{alert2}}</td>
-                <td>9:30 AM</td>
             </tr>
             <tr>
                 <td>Alcohol</td>
                 <td>{{alert3}}</td>
-                <td>9:30 AM</td>
             </tr>
         </table>
     </div>
     <div class="panel-container">
         <div class="panel">
-            <h2>Graph Panel 1</h2>
+            <h2>Engine temperature</h2>
             <img id="image1" src="{{ url_for('static', filename='images/graph1.png') }}" width="300" height="300">
         </div>
         <div class="panel">
-            <h2>Graph Panel 2</h2>
+            <h2>Coolant temperature</h2>
             <img id="image2" src="{{ url_for('static', filename='images/graph2.png') }}" width="300" height="300">
         </div>
         <div class="panel">
-            <h2>Graph Panel 3</h2>
+            <h2>Ambient temperature</h2>
             <img id="image3" src="{{ url_for('static', filename='images/graph3.png') }}" width="300" height="300">
         </div>
     </div>
 
-<h2>Map Example</h2>
+<h2>vehicle Location</h2>
 
     <script>
       function refreshImage() {
-        var image = document.getElementById("image");
+        var image = fdocument.getElementById("image");
         image.src = image.src.split("?")[0] + "?" + new Date().getTime();
       }
       setInterval(refreshImage, 5000);
