@@ -31,7 +31,8 @@ if mydb.is_connected():
 def get_data():
     # Query to get the required data
     # query = "SELECT * FROM adams_final LIMIT 30"
-    query = "SELECT * FROM adams_final WHERE current_time >= %s ORDER BY timestamp DESC LIMIT 30"
+    query = "SELECT * FROM adams_final WHERE current_time >= %s ORDER BY current_time
+   DESC LIMIT 30"
     # Execute the query and get the data
     cursor = mydb.cursor()
     cursor.execute(query)
