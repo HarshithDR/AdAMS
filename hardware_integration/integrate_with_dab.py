@@ -152,7 +152,7 @@ def gps1():
 def insert_data(gyro_data, acceleration, alcohol_data, temp_data, lat, lon, impact_data, ambient_temp,
                 humidity_data,current_time):
     mycursor = connection.cursor()
-    sql = "INSERT INTO adamsFinal (gyro_x, gyro_y, gyro_z,accelero_x,accelero_y,accelero_z, alcohol_detect, engine_temperature, coolant_temperature,ambient_temperature, latitude, longitude, impact_detect, humidity,current_time) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s,%s,%s,%s)"
+    sql = "INSERT INTO adams_final (gyro_x, gyro_y, gyro_z,accelero_x,accelero_y,accelero_z, alcohol_detect, engine_temperature, coolant_temperature,ambient_temperature, latitude, longitude, impact_detect, humidity,current_time) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s,%s,%s,%s)"
 
     val = (gyro_data['x'],gyro_data['y'], gyro_data['z'], acceleration['x'], acceleration['y'], acceleration['z'],
            str(alcohol_data), temp_data[0], temp_data[1], ambient_temp, lat, lon, str(impact_data), humidity_data,current_time)

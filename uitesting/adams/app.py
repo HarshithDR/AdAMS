@@ -30,13 +30,14 @@ if mydb.is_connected():
 # Function to get data from the MySQL database
 def get_data():
     # Query to get the required data
-    query = "SELECT * FROM adamsFinal LIMIT 30"
+    # query = "SELECT * FROM adams_final LIMIT 30"
+    query = "SELECT * FROM adams_final WHERE current_time >= %s ORDER BY timestamp DESC LIMIT 30"
     # Execute the query and get the data
     cursor = mydb.cursor()
     cursor.execute(query)
     data = cursor.fetchall()
     # Convert the data into a Pandas DataFrame
-    df = pd.DataFrame(data, columns=[ 'gyro_x', 'gyro_y', 'gyro_z','accelero_x','accelero_y','accelero_z', 'alcohol_detect', 'engine_temperature', 'coolant_temperature','ambient_temperature', 'latitude', 'longitude', 'impact_detect', 'humidity'])
+    df = pd.DataFrame(data, columns=['gyro_x', 'gyro_y', 'gyro_z','accelero_x','accelero_y','accelero_z', 'alcohol_detect', 'engine_temperature', 'coolant_temperature','ambient_temperature', 'latitude', 'longitude', 'impact_detect', 'humidity','current_time'])
     return df
 
 # Function to get the map image from the map.io API

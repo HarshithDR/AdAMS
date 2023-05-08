@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="419a5630-788b-4911-a115-928ae6c530e0" name="Changes" comment="hardware integrate working code with db">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hardware_integration/integrate_with_dab.py" beforeDir="false" afterPath="$PROJECT_DIR$/hardware_integration/integrate_with_dab.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sleep_detection/sleep_detection.py" beforeDir="false" afterPath="$PROJECT_DIR$/sleep_detection/sleep_detection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uitesting/adams/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/uitesting/adams/app.py" afterDir="false" />
-    </list>
+    <list default="true" id="419a5630-788b-4911-a115-928ae6c530e0" name="Changes" comment="small changes" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -402,7 +397,21 @@
       <option name="project" value="LOCAL" />
       <updated>1683215162390</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="hardware integrate working code with db and timestamp">
+      <created>1683516571436</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1683516571436</updated>
+    </task>
+    <task id="LOCAL-00033" summary="small changes">
+      <created>1683516612504</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1683516612504</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -437,6 +446,8 @@
     <MESSAGE value="update" />
     <MESSAGE value="hardware integrate working code" />
     <MESSAGE value="hardware integrate working code with db" />
-    <option name="LAST_COMMIT_MESSAGE" value="hardware integrate working code with db" />
+    <MESSAGE value="hardware integrate working code with db and timestamp" />
+    <MESSAGE value="small changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="small changes" />
   </component>
 </project>
