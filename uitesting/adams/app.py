@@ -8,15 +8,11 @@ import base64
 app = Flask(__name__)
 
 # ---------------------------------credentials------------------------------
-hostname = "q8r.h.filess.io"
-
-database = "adamsFinal_breathing"
-
+hostname = "uvo.h.filess.io"
+database= "adams_accuratemy"
 port = "3307"
-
-username = "adamsFinal_breathing"
-
-password = "42ede028288306e288f39522902619323c2969c4"
+username = "adams_accuratemy"
+password = "18d31e91e80c6305ecc28d86ffd3daf36fab2682"
 # -------------------------------------------------------------------------------
 
 # ----------------------------db connection-----------------------
@@ -72,7 +68,6 @@ def home():
     axs[1, 1].set_title('Humidity')
     # Convert the Matplotlib figure to a base64-encoded string
     fig_base64 = fig_to_base64(fig)
-
 
     # Get the table data
     table_data = df[['alcohol_detect', 'impact_detect']].to_dict('records')
