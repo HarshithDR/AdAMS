@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="419a5630-788b-4911-a115-928ae6c530e0" name="Changes" comment="small changes" />
+    <list default="true" id="419a5630-788b-4911-a115-928ae6c530e0" name="Changes" comment="small changes for sorting values from database">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uitesting/adams/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/uitesting/adams/app.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,7 +58,7 @@
       <recent name="C:\Harshith\python projects\adams\test" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.sleep_detection">
+  <component name="RunManager" selected="Python.app (2)">
     <configuration name="app (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="AdAMS" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -163,8 +166,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.sleep_detection" />
         <item itemvalue="Python.app (2)" />
+        <item itemvalue="Python.sleep_detection" />
         <item itemvalue="Python.app (1)" />
         <item itemvalue="Python.app" />
         <item itemvalue="Python.database_testing" />
@@ -411,7 +414,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683516612504</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="small changes for sorting values from database">
+      <created>1683517063436</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1683517063436</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -448,6 +458,7 @@
     <MESSAGE value="hardware integrate working code with db" />
     <MESSAGE value="hardware integrate working code with db and timestamp" />
     <MESSAGE value="small changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="small changes" />
+    <MESSAGE value="small changes for sorting values from database" />
+    <option name="LAST_COMMIT_MESSAGE" value="small changes for sorting values from database" />
   </component>
 </project>

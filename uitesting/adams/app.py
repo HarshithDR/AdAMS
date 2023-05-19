@@ -8,11 +8,15 @@ import base64
 app = Flask(__name__)
 
 # ---------------------------------credentials------------------------------
-hostname = "uvo.h.filess.io"
-database= "adams_accuratemy"
+hostname = "9tf.h.filess.io"
+
+database = "Adams_zebraherd"
+
 port = "3307"
-username = "adams_accuratemy"
-password = "18d31e91e80c6305ecc28d86ffd3daf36fab2682"
+
+username = "Adams_zebraherd"
+
+password = "ba2bdd0191f298555f884c5b21d437e60351fbd7"
 # -------------------------------------------------------------------------------
 
 # ----------------------------db connection-----------------------
@@ -30,14 +34,14 @@ if mydb.is_connected():
 # Function to get data from the MySQL database
 def get_data():
     # Query to get the required data
-    # query = "SELECT * FROM adams_final LIMIT 30"
-    query = "SELECT * FROM adams_final WHERE current_time >= %s ORDER BY timestamp DESC LIMIT 30"
+    query = "SELECT * FROM AdamsEast LIMIT 30"
+    # query = "SELECT * FROM adams_final WHERE current_time >= %s ORDER BY timestamp DESC LIMIT 30"
     # Execute the query and get the data
     cursor = mydb.cursor()
     cursor.execute(query)
     data = cursor.fetchall()
     # Convert the data into a Pandas DataFrame
-    df = pd.DataFrame(data, columns=['gyro_x', 'gyro_y', 'gyro_z','accelero_x','accelero_y','accelero_z', 'alcohol_detect', 'engine_temperature', 'coolant_temperature','ambient_temperature', 'latitude', 'longitude', 'impact_detect', 'humidity','current_time'])
+    df = pd.DataFrame(data, columns=['gyro_x', 'gyro_y', 'gyro_z','accelero_x','accelero_y','accelero_z', 'alcohol_detect', 'engine_temperature', 'coolant_temperature','ambient_temperature', 'latitude', 'longitude', 'impact_detect', 'humidity'])
     return df
 
 # Function to get the map image from the map.io API
@@ -93,4 +97,4 @@ def b64encode_filter(s):
     return base64.b64encode(s).decode('utf-8')
 
 if __name__ == '__main__':
-    app.run(debug=True,host='192.168.43.254', port=5000)
+    app.run(debug=True,host='192.168.136.208', port=5000)
