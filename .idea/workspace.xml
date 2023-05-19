@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="419a5630-788b-4911-a115-928ae6c530e0" name="Changes" comment="small changes for sorting values from database">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uitesting/adams/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/uitesting/adams/app.py" afterDir="false" />
-    </list>
+    <list default="true" id="419a5630-788b-4911-a115-928ae6c530e0" name="Changes" comment="update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -421,7 +418,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683517063436</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="update">
+      <created>1684503876278</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1684503876278</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -453,12 +457,12 @@
     <MESSAGE value="gps working" />
     <MESSAGE value="integration code ready" />
     <MESSAGE value="change alcohol testing code" />
-    <MESSAGE value="update" />
     <MESSAGE value="hardware integrate working code" />
     <MESSAGE value="hardware integrate working code with db" />
     <MESSAGE value="hardware integrate working code with db and timestamp" />
     <MESSAGE value="small changes" />
     <MESSAGE value="small changes for sorting values from database" />
-    <option name="LAST_COMMIT_MESSAGE" value="small changes for sorting values from database" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
 </project>
