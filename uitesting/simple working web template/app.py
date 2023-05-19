@@ -2,6 +2,9 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
+
+
+
 # dictionary containing sensor names and values
 sensors = {
     "ambient temperature": "20 C",
